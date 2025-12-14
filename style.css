@@ -1,0 +1,381 @@
+/* =========================
+   LUXURY EMERALD THEME
+   ========================= */
+
+:root{
+  --emerald: #054f2d;
+  --moss: #2f7a48;
+  --gold: #c9a34a;
+  --ivory: #fbf9f6;
+  --char: #111213;
+  --muted: #6b6f6d;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+html,body { height: 100%; scroll-behavior: smooth; }
+
+body{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto;
+  color: var(--char);
+  background: linear-gradient(180deg, #f8fbf8 0%, #f2f7f2 100%);
+  line-height: 1.55;
+}
+
+/* =========================
+   HEADER + NAVBAR
+   ========================= */
+
+.site-header{
+  background: linear-gradient(90deg, rgba(5,79,45,0.95), rgba(47,122,72,0.95));
+  color: #fff;
+  padding: 22px 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 6px 20px rgba(5,79,45,0.25);
+}
+
+.header-inner{
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-pic{
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.18);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.brand-text h1{
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  margin: 0;
+}
+
+.brand-text .tagline{
+  font-size: 13px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* NAVBAR (INLINE) */
+.navbar{
+  background: none;
+  padding: 0;
+}
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a{
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color: var(--gold);
+}
+
+.nav-links a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+  width: 100%;
+}
+
+/* =========================
+   PANELS & SECTIONS
+   ========================= */
+
+.panel{ padding: 64px 0; }
+
+.container{
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.section-title{
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: var(--emerald);
+  margin-bottom: 12px;
+}
+
+.lead{
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 900px;
+}
+
+/* Quick Cards */
+.quick-cards{
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.card{
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  padding: 12px 16px;
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 8px 20px rgba(12,25,12,0.06);
+}
+
+/* =========================
+   GALLERY
+   ========================= */
+
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+.image-card{
+  background: var(--ivory);
+  border-radius: var(--radius);
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(14,30,14,0.06);
+  transition: transform .35s ease;
+  cursor: pointer;
+}
+
+.image-card img{
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.image-card:hover{
+  transform: translateY(-8px);
+}
+
+/* =========================
+   JOURNAL
+   ========================= */
+
+.journal-section{
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.journal-timeline{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.journal-timeline::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: rgba(0,128,90,0.35);
+  transform: translateX(-50%);
+}
+
+.journal-entry{
+  width: 280px;
+  aspect-ratio: 3 / 4;
+  margin: auto;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0f2f24;
+  box-shadow: 0 0 25px rgba(0,255,170,0.25);
+  transition: transform 0.4s ease;
+}
+
+.journal-entry img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   CERTIFICATES
+   ========================= */
+
+.certificate-section{
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.certificate-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.certificate-card{
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0f2f24;
+  box-shadow: 0 0 20px rgba(0,255,170,0.2);
+  transition: transform 0.4s ease;
+}
+
+.certificate-card {
+  aspect-ratio: 16 / 9;     /* certificate-friendly */
+}
+
+.certificate-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;     /* NO distortion */
+  background: #0b241b;     /* subtle frame */
+}
+
+
+/* =========================
+   CONTACT + FOOTER
+   ========================= */
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.site-footer{
+  background: linear-gradient(90deg, rgba(5,79,45,0.95), rgba(47,122,72,0.9));
+  color: white;
+  padding: 18px 0;
+  margin-top: 28px;
+  text-align: center;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px){
+  .header-inner{
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-links{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   CERTIFICATE LIGHTBOX
+   ========================= */
+
+.cert-lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-lightbox.show {
+  display: flex;
+}
+
+.cert-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 20, 12, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.cert-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90vw;
+  max-height: 85vh;
+  background: #0b241b;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.cert-content img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+  background: #081a13;
+}
+
+/* Close button */
+.cert-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gold);
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.journal-entry,
+.certificate-card {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.journal-entry.show,
+.certificate-card.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease;
+}
